@@ -1,0 +1,19 @@
+<div class="hero-unit">
+    <h1>Crunch</h1>
+    <select>
+        <option ng-repeat="consultant in consultants" value="{{consultant}}">{{consultant}}</option>
+    </select>
+    <select ng-model="selectedMonth" ng-change="changeCRA()">
+        <option ng-repeat="month in months" value="{{month}}">{{month | date:'MM/yyyy'}}</option>
+    </select>
+    <table border="1" class="table">
+        <tr>
+            <th>Missions</th>
+            <th ng-repeat="day in daysInMonth">{{day}}</th>
+        </tr>
+        <tr ng-repeat="mission in missions">
+            <td>{{mission}}</td>
+            <td ng-repeat="day in daysInMonth"></td>
+        </tr>
+    </table>
+</div>
